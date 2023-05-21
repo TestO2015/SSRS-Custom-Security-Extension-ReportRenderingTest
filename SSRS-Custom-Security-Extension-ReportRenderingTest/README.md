@@ -21,6 +21,10 @@ Make sure to set the name of the authentication/authorization extensions in the 
 <Extension Name="Forms" Type="SSRSSecurityExtension.SSRSAuthorization, SSRSSecurityExtension">
 <Extension Name="Forms" Type="SSRSSecurityExtension.SSRSAuthentication, SSRSSecurityExtension">
 
+Deployment to the SSRS installation directory:
+- Copy the built SSRSSecurityExtension.dll and pdb files to the /ReportServer/bin and /Portal directories.
+- Copy Logon.aspx to the /ReportServer/bin directory.
+
 # Reporting Services Custom Security Sample for Power BI Report Server and SQL Reporting Services 2017
 This project contains a sample and the steps that allow you to deploy a custom security extension to SQL Reporting Services 2017 or Power BI Report Server.
 
