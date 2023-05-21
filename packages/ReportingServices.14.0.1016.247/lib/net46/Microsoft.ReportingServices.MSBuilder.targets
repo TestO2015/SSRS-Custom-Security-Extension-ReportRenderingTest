@@ -1,0 +1,134 @@
+<!--
+***********************************************************************************************
+Microsoft.ReportingServices.MSBuilder
+
+This file defines the steps in the standard build process specific for Reporting Services projects.
+***********************************************************************************************
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Include the current project and .targets file in MSBuildAllProjects. This variable is used for specifying transforms for compile steps.
+    This is required because project must be rebuild if project file or .targets are changed.-->
+  <PropertyGroup>
+    <MSBuildAllProjects>
+      $(MSBuildThisFileFullPath);$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets
+    </MSBuildAllProjects>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BuildType Condition=" '$(BuildType)' == '' ">Build</BuildType>
+  </PropertyGroup>
+
+  <!--Import the standards targets-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+
+  <!--Reference the assembly where our tasks are defined-->
+  <UsingTask TaskName="Microsoft.ReportingServices.BuildProcess.ReportBuilderTask" AssemblyFile="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.BuildProcess.dll" />
+
+  <Target Name="ReportBuilderTarget">
+    <ReportBuilderTask
+     BuildType="$(BuildType)"
+     DataSets="$(DataSets)"
+     DataSources="$(DataSources)"
+     ErrorLevel="$(ErrorLevel)"
+     FullPath="$(MSBuildProjectFullPath)"
+     OutputDirectory="$(OutputPath)"
+     OverwriteDatasets="$(OverwriteDatasets)"
+     OverwriteDataSources="$(OverwriteDataSources)"
+     Platform="$(Platform)"
+     ProjectDirectory="$(MSBuildProjectDirectory)"
+     Reports="$(Reports)"
+     SourceFiles="@(Compile)"
+     StartItem="$(StartItem)"
+     State="$(State)"
+     TargetDatasetFolder="$(TargetDatasetFolder)"
+     TargetDataSourceFolder="$(TargetDataSourceFolder)"
+     TargetReportFolder="$(TargetReportFolder)"
+     TargetReportPartFolder="$(TargetReportPartFolder)"
+     TargetServerURL="$(TargetServerURL)"
+     TargetServerVersion="$(TargetServerVersion)">
+      <Output
+        TaskParameter = "OutputFiles"
+        ItemName = "ReportBuilderOutputFiles"/>
+    </ReportBuilderTask>
+  </Target>
+
+  <Target Name="Clean" DependsOnTargets="SetClean">
+    <CallTarget Targets="ReportBuilderTarget"/>
+  </Target>
+
+  <Target Name="SetClean">
+    <PropertyGroup>
+      <BuildType>Clean</BuildType>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="SetRebuild">
+    <CallTarget Targets="ReportBuilderTarget"/>
+  </Target>
+
+  <Target Name="SetRebuild">
+    <PropertyGroup>
+      <BuildType>Rebuild</BuildType>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="Deploy" DependsOnTargets="SetDeploy">
+    <CallTarget Targets="ReportBuilderTarget"/>
+  </Target>
+
+  <Target Name="SetDeploy">
+    <PropertyGroup>
+      <BuildType>Deploy</BuildType>
+    </PropertyGroup>
+  </Target>
+
+  <!--This is an override of CoreCompile to have our ReportBuilderTask be called at compile time-->
+  <Target
+      Name="CoreCompile"
+      Inputs="@(Compile);
+              @(ReferencePath)"
+      Outputs="@(IntermediateAssembly)"
+      DependsOnTargets="$(CoreCompileDependsOn);ReportBuilderTarget"
+    >
+  </Target>
+
+  <!--This is an override of CopyFilesToOutputDirectory to have our built files to be copied to output directory.
+    Override is required as default CopyFilesToOutputDirectory target from Microsoft.Common.targets copies 
+    $(IntermediateAssembly) that does not make sense in our context.-->
+  <Target
+      Name="CopyFilesToOutputDirectory"
+      DependsOnTargets="
+            _CopySourceItemsToOutputDirectory;
+            _CheckForCompileOutputs;">
+    <Copy
+        SourceFiles="@(ReportBuilderOutputFiles)"
+        DestinationFolder="$(OutDir)"
+        SkipUnchangedFiles="true">
+      <!--Save the list of destination files in FileWrites-->
+      <Output TaskParameter="DestinationFiles" ItemName="FileWrites"/>
+    </Copy>
+  </Target>
+
+  <!--This is an override of _CheckForCompileOutputs to save the list of built files in FileWrites. Files 
+    that are copied to output directory are also saved in FileWrites. Keeping FileWrites list in consistency is 
+    required for a Clean functionality.-->
+  <Target
+      Name="_CheckForCompileOutputs">
+    <!--Record the main compile outputs.-->
+    <FindUnderPath
+      Files="@(ReportBuilderOutputFiles->'%(FullPath)')"
+      Path="$(IntermediateOutputPath)">
+      <Output TaskParameter="InPath" ItemName="_ReportBuilderOutputFilesInIntermediatePath"/>
+    </FindUnderPath>
+    <ItemGroup>
+      <FileWrites Include="@(_ReportBuilderOutputFilesInIntermediatePath)"/>
+    </ItemGroup>
+  </Target>
+
+
+  <!--CreateManifestResourceNames must be defined even though it won't be built-->
+  <Target Name="CreateManifestResourceNames"/>
+
+</Project>

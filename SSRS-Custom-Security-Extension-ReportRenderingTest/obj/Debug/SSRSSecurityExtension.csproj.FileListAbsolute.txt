@@ -1,0 +1,8 @@
+C:\Repos\SSRSSecurityExtension-ReportRenderingTest\SSRS-Custom-Security-Extension-ReportRenderingTest\obj\Debug\SSRSSecurityExtension.csproj.AssemblyReference.cache
+C:\Repos\SSRSSecurityExtension-ReportRenderingTest\SSRS-Custom-Security-Extension-ReportRenderingTest\obj\Debug\SSRSSecurityExtension.csproj.CoreCompileInputs.cache
+C:\Repos\SSRSSecurityExtension-ReportRenderingTest\SSRS-Custom-Security-Extension-ReportRenderingTest\obj\Debug\SSRSSecurityExtension.csproj.CopyComplete
+C:\Repos\artifacts\bin\Debug\SSRSSecurityExtension.dll.config
+C:\Repos\artifacts\bin\Debug\SSRSSecurityExtension.dll
+C:\Repos\artifacts\bin\Debug\SSRSSecurityExtension.pdb
+C:\Repos\SSRSSecurityExtension-ReportRenderingTest\SSRS-Custom-Security-Extension-ReportRenderingTest\obj\Debug\SSRSSecurityExtension.dll
+C:\Repos\SSRSSecurityExtension-ReportRenderingTest\SSRS-Custom-Security-Extension-ReportRenderingTest\obj\Debug\SSRSSecurityExtension.pdb

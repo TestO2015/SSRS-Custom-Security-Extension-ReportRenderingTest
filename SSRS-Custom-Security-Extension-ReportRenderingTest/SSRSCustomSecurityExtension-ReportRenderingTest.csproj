@@ -1,0 +1,145 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A64F3BDE-1D77-490F-B82D-82111EE6C3D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SSRSCustomSecurityExtension_ReportRenderingTest</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\main" />
+    <None Include=".git\logs\refs\remotes\origin\main" />
+    <None Include=".git\objects\03\093dd8545c906b9a0a3ea6e3e4d8646e27c689" />
+    <None Include=".git\objects\08\2e30521de4e283f63a3093bdea8bdfbbea1ed5" />
+    <None Include=".git\objects\15\efebfcc028c553761d9f510ac8ed4f19a41442" />
+    <None Include=".git\objects\1f\c74221f58c1cbcb8308e71099357df41b122ad" />
+    <None Include=".git\objects\22\c7e5f25d99efb4506c3a682be1d890532ae06a" />
+    <None Include=".git\objects\25\6e2602ef49fb534bf2a4190e28327a5b2cc165" />
+    <None Include=".git\objects\25\cc3a090c13b42ac8ffc477d9ee87920be65fa0" />
+    <None Include=".git\objects\2d\6eaf891c7e9aab4de2d8d9a801656422e33079" />
+    <None Include=".git\objects\43\663316e97dbc6d56e1469b66964237a775dd9e" />
+    <None Include=".git\objects\49\8b069c462a18e307c8c9f8e77d65e073f0bf81" />
+    <None Include=".git\objects\4f\8f2e668991f6f4949c47eaa4a1e0972d7c02f8" />
+    <None Include=".git\objects\50\95d95840c1cd69f16bdfdb2a81bfe1fe8a0d8d" />
+    <None Include=".git\objects\58\3a03c139dc8cf7da06fd4590c2acd944decc78" />
+    <None Include=".git\objects\67\19e569295f9ff72ad9c721f56ae8953e108728" />
+    <None Include=".git\objects\6d\78cccc07b237e7d95a1563df0458c59b576c13" />
+    <None Include=".git\objects\70\0a98a4060562ab56ab5f20cacbb6c322859f03" />
+    <None Include=".git\objects\70\25fb3bba95196722504d7b8a27592bcecff0f5" />
+    <None Include=".git\objects\70\c5894d1e3a5eb7737258c3f4977e6cf65e1c77" />
+    <None Include=".git\objects\72\513dade2149d5d2a104230d9bc32a8a93a5cde" />
+    <None Include=".git\objects\7c\d1998c1cb1b0b01f96503f3770eb3427c790c2" />
+    <None Include=".git\objects\7c\d99ef84aa229c6aef0169a140e7d76128e23b4" />
+    <None Include=".git\objects\80\2751da36f1b040e5035b87917543154a0699e8" />
+    <None Include=".git\objects\85\e6bba26d9e4847211b52618530f96493037b62" />
+    <None Include=".git\objects\8c\a8b33640d88fc5b21feb37788c59bb298e745c" />
+    <None Include=".git\objects\8d\4f96b20b22dc0216c9111a37391acffe7e1b06" />
+    <None Include=".git\objects\8f\dddabd9d933f1562f8ff346ae7bb605f1f26a3" />
+    <None Include=".git\objects\94\105729f6cde845c2abb17fd00c548b6d46ac93" />
+    <None Include=".git\objects\96\46e637a4c9e9497f04cbf0d7f9e0dd0b4fad13" />
+    <None Include=".git\objects\a7\8fd713505015763d2368c426df7c9fba43af06" />
+    <None Include=".git\objects\ad\aac36ea3c5f33d5b1fcffa5aedafd180758f59" />
+    <None Include=".git\objects\bc\4ad6de2a0906a48e91679107b2df1cc8e2676e" />
+    <None Include=".git\objects\bc\e1c83c5feb2b1127fbf9c42c9c259ffe8ebc85" />
+    <None Include=".git\objects\c6\7974c9d96962451de66fc57fddfcb5a2d53f8c" />
+    <None Include=".git\objects\ca\6ed4fbedf71b32e5f861bebfae14b35d9bb438" />
+    <None Include=".git\objects\d4\816d207e98f9886539b0296341c1013198980a" />
+    <None Include=".git\objects\da\6c1e554eeebd410710f33dbd39279b862e1528" />
+    <None Include=".git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <None Include=".git\objects\f5\b818df4a00d24b461476e595192dd5a90b501b" />
+    <None Include=".git\refs\heads\main" />
+    <None Include=".git\refs\remotes\origin\main" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\config\applicationhost.config" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\FileContentIndex\8092f4bf-989b-4c07-9d94-4fcc114431e0.vsidx" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\FileContentIndex\f8d79bc5-ecf2-4c3e-bb79-dc1f3ed11448.vsidx" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\FileContentIndex\fa422bf7-25d8-4fbc-9f96-b0540a9b51e0.vsidx" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\FileContentIndex\read.lock" />
+    <None Include=".vs\Saturn.SSRSSecurityExtension\v17\.suo" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\slnx.sqlite-journal" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="README.md" />
+    <None Include="Setup.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logon.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="ReportExecutionService.cs" />
+    <Compile Include="ReportingService2010.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SSRSAuthentication.cs" />
+    <Compile Include="SSRSAuthorization.cs" />
+    <Compile Include="SSRSDbConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include=".vs\Saturn.SSRSSecurityExtension\FileContentIndex\merges\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
